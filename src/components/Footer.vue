@@ -32,6 +32,5 @@
   </script>
   
   <style>
-  /* Adicione estilos adicionais conforme necessário */
   </style>
   

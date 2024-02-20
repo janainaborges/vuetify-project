@@ -1,9 +1,10 @@
 <template>
   <v-form>
-    <v-text-field label="Nome" v-model="personalInfo.name"></v-text-field>
-    <v-text-field label="Email" v-model="personalInfo.email"></v-text-field>
-    <v-text-field label="Telefone" v-model="personalInfo.phone"></v-text-field>
-    <v-text-field label="CPF" v-model="formattedCpf"></v-text-field>
+    <v-text-field label="Nome" v-model="personalInfo.name" @input="emitPersonalInfo"></v-text-field>
+    <v-text-field label="Email" v-model="personalInfo.email" @input="emitPersonalInfo"></v-text-field>
+    <v-text-field label="Telefone" v-model="personalInfo.phone" @input="emitPersonalInfo"></v-text-field>
+    <!-- Utilize v-model.lazy para evitar atualizações excessivas durante a digitação -->
+    <v-text-field label="CPF" v-model.lazy="formattedCpf" @blur="emitPersonalInfo"></v-text-field>
   </v-form>
 </template>
 
@@ -18,6 +19,12 @@ export default {
       cpf: '',
     },
   }),
+  methods: {
+    emitPersonalInfo() {
+      // Emite as informações pessoais atualizadas para o componente pai
+      this.$emit('updatePersonalInfo', this.personalInfo);
+    },
+  },
   computed: {
     formattedCpf: {
       get() {
@@ -29,7 +36,9 @@ export default {
         return formatted;
       },
       set(value) {
-        this.personalInfo.cpf = value.replace(/\D/g, ''); 
+        this.personalInfo.cpf = value.replace(/\D/g, '');
+        // Chama emitPersonalInfo aqui para garantir que mudanças no CPF sejam emitidas
+        this.emitPersonalInfo();
       }
     }
   },

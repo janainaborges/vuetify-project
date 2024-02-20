@@ -28,6 +28,7 @@ export default {
           this.address.street = response.data.logradouro;
           this.address.city = response.data.localidade;
           this.address.state = response.data.uf;
+          this.$emit('updateAddress', this.address);
         } catch (error) {
           console.error('Error fetching address:', error);
         }

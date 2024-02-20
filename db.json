@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Produto Exemplo 1",
       "description": "Descrição do Produto Exemplo 1",
       "imageUrl": "LinkParaImagemDoProduto1",
@@ -9,17 +9,10 @@
     }
   ],
   "orders": [],
-  "offers": [
-    {
-      "id": 1,
-      "products": [1],
-      "description": "Descrição da oferta",
-      "validUntil": "2024-12-31"
-    }
-  ],
+  "offers": [],
   "customers": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Nome do Cliente",
       "email": "email@cliente.com",
       "address": "Endereço do Cliente",
