@@ -1,0 +1,30 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Produto Exemplo 1",
+      "description": "Descrição do Produto Exemplo 1",
+      "imageUrl": "LinkParaImagemDoProduto1",
+      "price": 500
+    }
+  ],
+  "orders": [],
+  "offers": [
+    {
+      "id": 1,
+      "products": [1],
+      "description": "Descrição da oferta",
+      "validUntil": "2024-12-31"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Nome do Cliente",
+      "email": "email@cliente.com",
+      "address": "Endereço do Cliente",
+      "paymentMethod": "Método de Pagamento",
+      "orderId": 1
+    }
+  ]
+}
