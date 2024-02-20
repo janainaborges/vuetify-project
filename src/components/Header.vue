@@ -16,28 +16,27 @@
     name: 'Header',
     data() {
       return {
-        isMobile: false, // Adicione um estado para rastrear se a visualização é em um dispositivo móvel
-        darkMode: false // Adicione um estado para rastrear se o modo escuro está ativado
+        isMobile: false, 
+        darkMode: false 
       };
     },
     mounted() {
-      this.isMobile = window.innerWidth <= 600; // Defina o estado 'isMobile' com base na largura da janela
-      window.addEventListener('resize', this.handleResize); // Adicione um ouvinte de evento de redimensionamento para atualizar 'isMobile'
+      this.isMobile = window.innerWidth <= 600; 
+      window.addEventListener('resize', this.handleResize); 
     },
     methods: {
       toggleDrawer() {
-        // Implemente a lógica para abrir/fechar o drawer (se aplicável)
+      
       },
       toggleDarkMode() {
-        this.darkMode = !this.darkMode; // Alterne o estado do modo escuro
-        // Implemente a lógica para alterar o tema escuro (se aplicável)
+        this.darkMode = !this.darkMode;
       },
       handleResize() {
-        this.isMobile = window.innerWidth <= 600; // Atualize 'isMobile' com base na largura da janela
+        this.isMobile = window.innerWidth <= 600; 
       }
     },
     beforeUnmount() {
-      window.removeEventListener('resize', this.handleResize); // Remova o ouvinte de evento de redimensionamento antes de desmontar o componente
+      window.removeEventListener('resize', this.handleResize); 
     }
   };
   </script>

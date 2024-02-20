@@ -37,7 +37,6 @@ export default {
       },
       set(value) {
         this.personalInfo.cpf = value.replace(/\D/g, '');
-        // Chama emitPersonalInfo aqui para garantir que mudanças no CPF sejam emitidas
         this.emitPersonalInfo();
       }
     }
